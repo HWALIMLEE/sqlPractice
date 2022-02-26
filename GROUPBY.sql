@@ -1,0 +1,11 @@
+-- problem
+-- https://programmers.co.kr/learn/courses/30/lessons/59040
+SELECT ANIMAL_TYPE, COUNT(*) AS count FROM ANIMAL_INS GROUP BY ANIMAL_TYPE ORDER BY ANIMAL_TYPE ASC
+
+
+-- https://programmers.co.kr/learn/courses/30/lessons/59041
+SELECT NAME, COUNT(NAME) as COUNT FROM ANIMAL_INS WHERE NAME IS NOT NULL GROUP BY NAME HAVING COUNT > 1 ORDER BY NAME
+
+
+-- https://programmers.co.kr/learn/courses/30/lessons/59412
+SELECT HOUR(DATETIME) as HOUR, COUNT(*) as COUNT FROM ANIMAL_OUTS WHERE HOUR(DATETIME) >= 9 and HOUR(DATETIME) <= 19 GROUP BY HOUR ORDER BY HOUR
