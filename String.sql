@@ -29,4 +29,15 @@ WITH TBL AS (
 )
 SELECT ANIMAL_ID, NAME FROM TBL LIMIT 2
 
-
+-- https://programmers.co.kr/learn/courses/30/lessons/77487
+WITH TBL AS
+    (
+        SELECT HOST_ID, COUNT(*) as count
+        FROM PLACES
+        GROUP BY HOST_ID
+        HAVING count > 1
+    )
+SELECT A.ID, A.NAME, A.HOST_ID FROM PLACES A
+INNER JOIN TBL B
+ON A.HOST_ID = B.HOST_ID
+ORDER BY ID
