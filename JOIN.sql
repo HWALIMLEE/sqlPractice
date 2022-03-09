@@ -24,3 +24,8 @@ WHERE B.ANIMAL_ID IS NULL
 ORDER BY DATETIME
 LIMIT 3
 
+
+-- https://leetcode.com/problems/combine-two-tables
+SELECT A.firstName, A.lastName, B.city, B.state FROM Person A
+LEFT JOIN Address B
+ON A.personId = B.personId
