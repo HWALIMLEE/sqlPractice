@@ -29,3 +29,9 @@ LIMIT 3
 SELECT A.firstName, A.lastName, B.city, B.state FROM Person A
 LEFT JOIN Address B
 ON A.personId = B.personId
+
+-- https://leetcode.com/problems/employees-earning-more-than-their-managers
+SELECT A.name as Employee FROM Employee A
+LEFT JOIN Employee B
+ON A.managerId = B.id
+WHERE A.salary > B.salary
