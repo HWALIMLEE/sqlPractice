@@ -9,3 +9,9 @@ SELECT NAME, COUNT(NAME) as COUNT FROM ANIMAL_INS WHERE NAME IS NOT NULL GROUP B
 
 -- https://programmers.co.kr/learn/courses/30/lessons/59412
 SELECT HOUR(DATETIME) as HOUR, COUNT(*) as COUNT FROM ANIMAL_OUTS WHERE HOUR(DATETIME) >= 9 and HOUR(DATETIME) <= 19 GROUP BY HOUR ORDER BY HOUR
+
+-- https://leetcode.com/problems/duplicate-emails
+With TBL AS(
+    SELECT email as Email, count(*) as count from Person group by email
+    )
+SELECT Email from TBL where count > 1
