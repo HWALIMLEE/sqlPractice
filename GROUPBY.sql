@@ -15,3 +15,11 @@ With TBL AS(
     SELECT email as Email, count(*) as count from Person group by email
     )
 SELECT Email from TBL where count > 1
+
+-- https://leetcode.com/problems/classes-more-than-5-students/submissions/
+WITH TBL AS(
+    SELECT class, count(class) as count FROM Courses
+    GROUP BY class
+    )
+SELECT class FROM TBL
+WHERE count >= 5
