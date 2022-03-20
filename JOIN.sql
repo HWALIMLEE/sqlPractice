@@ -35,3 +35,9 @@ SELECT A.name as Employee FROM Employee A
 LEFT JOIN Employee B
 ON A.managerId = B.id
 WHERE A.salary > B.salary
+
+-- https://www.hackerrank.com/challenges/asian-population/problem?isFullScreen=true
+SELECT sum(CITY.POPULATION) FROM COUNTRY
+INNER JOIN CITY
+ON COUNTRY.CODE = CITY.COUNTRYCODE
+WHERE COUNTRY.CONTINENT='Asia'
