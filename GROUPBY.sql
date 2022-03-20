@@ -24,6 +24,7 @@ WITH TBL AS(
 SELECT class FROM TBL
 WHERE count >= 5
 
+-- https://www.hackerrank.com/challenges/average-population-of-each-continent/problem?isFullScreen=true
 SELECT COUNTRY.CONTINENT, floor(avg(CITY.POPULATION)) FROM COUNTRY
 INNER JOIN CITY
 ON COUNTRY.CODE = CITY.COUNTRYCODE
